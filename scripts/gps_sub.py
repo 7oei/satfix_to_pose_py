@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
+# coding: utf-8
 from telnetlib import STATUS
 import rospy
 import sys
