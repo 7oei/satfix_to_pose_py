@@ -14,7 +14,6 @@ import tf
 POLE_RADIUS = 6356752    # 極半径(短半径)
 EQUATOR_RADIUS = 6378137 # 赤道半径(長半径)
 E = 0.081819191042815790 # 離心率
-#E2= 0.006694380022900788 # 離心率の２乗
 E2= 0.006694379990197413546782 # 離心率の２乗再計算
 
 base_lat = 0
@@ -43,9 +42,12 @@ if __name__ == '__main__':
 
     while not rospy.is_shutdown():
         if flag == 0 and lat != 0.00000 and lon != 0.00000 and alt != 0.00000:
-            base_lat = lat
-            base_lon = lon
-            base_alt = alt
+            # base_lat = lat #初期位置の総体位置化しない
+            # base_lon = lon
+            # base_alt = alt
+            base_lat = 36.112644
+            base_lon = 140.0982521
+            base_alt = 64.044
             rospy.loginfo("基準lat: %.7f, lon: %.7f, alt: %.7f", lat, lon, alt)
 
             flag = 1
